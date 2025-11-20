@@ -5,21 +5,21 @@
   // 1) Everyone reads from the raw URL (public)
   // 2) Writes use GitHub Contents API and require a Personal Access Token (prompted once in browser)
   // Fill these with your values:
-  const REMOTE_READ_URL = 'https://raw.githubusercontent.com/kennedyrocha/escalaorgandata/refs/heads/main/data.json';
+  const REMOTE_READ_URL = 'https://raw.githubusercontent.com/kennedyrocha/escalaorgandata/refs/heads/main/data2.json';
   const GITHUB_OWNER = 'kennedyrocha';
   const GITHUB_REPO = 'escalaorgandata';
   const GITHUB_BRANCH = 'main';
-  const DATA_PATH = 'data.json'; // e.g., 'data.json' or 'data/data.json'
+  const DATA_PATH = 'data2.json'; // e.g., 'data.json' or 'data/data.json'
   // WARNING: This exposes your token to everyone who can view source.
   // Use a fine-grained token limited to only this repo, with minimal permissions.
   const GITHUB_TOKEN = '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';
   const DEFAULT_SHIFTS = [
-    { id: 'shift-1', label: 'Shift 1' },
-    { id: 'shift-2', label: 'Shift 2' },
-    { id: 'shift-3', label: 'Shift 3' },
-    { id: 'shift-4', label: 'Shift 4' },
-    { id: 'shift-5', label: 'Shift 5' },
-    { id: 'shift-6', label: 'Shift 6' }
+    { id: 'shift-1', label: 'Escala 22-Jan-2026 à 22-mar-2026' },
+    { id: 'shift-2', label: 'Escala 22-mar-2026 à 22-mai-2026' },
+    { id: 'shift-3', label: 'Escala 22-mai-2026 à 22-jul-2026' },
+    { id: 'shift-4', label: 'Escala 22-Jul-2026 à 22-set-2026' },
+    { id: 'shift-5', label: 'Escala 22-set-2026 à 22-nov-2026' },
+    { id: 'shift-6', label: 'Escala 22-nov-2026 à 22-jan-2027' }
   ];
 
   const $form = document.getElementById('registrationForm');
@@ -92,11 +92,11 @@
       card.innerHTML = `
         <h3>${escapeHtml(s.label)}</h3>
         <div class="shift-meta">
-          <span class="badge">Capacity ${count}/${state.capacity}</span>
+          <span class="badge">Capacidade ${count}/${state.capacity}</span>
           <span>${count >= state.capacity ? 'Full' : 'Open'}</span>
         </div>
         <div class="shift-actions">
-          <button class="btn" data-view="${s.id}">View participants</button>
+          <button class="btn" data-view="${s.id}">Ver participantes</button>
         </div>
       `;
       $grid.appendChild(card);
