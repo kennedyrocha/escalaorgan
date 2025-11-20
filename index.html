@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shift Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Shift Registration</h1>
+    <p class="subtitle">Choose your shift and see who has already joined</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Register</h2>
+      <form id="registrationForm" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required />
+        </div>
+        <div class="form-row">
+          <label for="shift">Shift</label>
+          <select id="shift" name="shift" required></select>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+          <button type="submit" class="btn primary">Register</button>
+        </div>
+        <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Shifts</h2>
+      <div id="shiftsGrid" class="shifts-grid"></div>
+    </section>
+  </main>
+
+  <div id="participantsModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" title="Close" aria-label="Close" data-close>&times;</button>
+      <h3 id="modalTitle">Participants</h3>
+      <ul id="participantsList" class="participants-list"></ul>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <small>Data is stored in your browser using localStorage and can be hosted on GitHub Pages.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
