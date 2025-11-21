@@ -8,8 +8,9 @@
   </head>
   <body>
     <header class="site-header">
-      <h1>Cadastro na Escala da Organ</h1>
-      <p class="subtitle">Escolha sua escala e veja quem já se cadastrou</p>
+      <h3>Núcleo Primavera - 13º Região</h3>
+      <h1>Cadastro para Escala da Organ 2026</h1>
+      <p>Preencha abaixo o período de escala de trabalho desejado. Seu cadastro será avaliado e poderá ser ajustado conforme as necessidades do núcleo.</p>
     </header>
 
     <main class="container">
@@ -27,7 +28,7 @@
             />
           </div>
           <div class="form-row">
-            <label for="shift">Escala</label>
+            <label for="shift">Período desejado</label>
             <select id="shift" name="shift" required></select>
           </div>
           <div
@@ -54,9 +55,7 @@
       <div class="success-box">
         <div class="icon">✔</div>
         <h3 id="successTitle">Cadastrado com sucesso!</h3>
-        <p id="successTextName"></p>
-        <p>foi cadastrado(a) na</p>
-        <p id="successTextShift"></p>
+        <p id="successText"></p>
         <button class="btn-close" onclick="closeSuccessModal()">Fechar</button>
       </div>
     </div>

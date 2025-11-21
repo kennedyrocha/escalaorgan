@@ -83,7 +83,7 @@ const db = firebase.database();
             opt.textContent = `${s.label} (${count}/${state.capacity})`;
             if (count >= state.capacity) {
                 opt.disabled = true;
-                opt.textContent += " - Full";
+                opt.textContent += " - Vagas preenchidas";
             }
             $shift.appendChild(opt);
         });
@@ -137,16 +137,14 @@ const db = firebase.database();
 
         await saveToFirebase();
 
+        showMessage("", "");
         openSuccessModal(name, s.label);
         $form.reset();
     });
 
     function openSuccessModal(name, shiftLabel) {
-        document.getElementById("successTextName").textContent =
-            `${name}`;
-
-        document.getElementById("successTextShift").textContent =
-            `${shiftLabel}.`;
+        document.getElementById("successText").innerHTML =
+            `${name} <br>foi cadastrado(a) na escala de<br> ${shiftLabel}`;
 
         document.getElementById("successModal")
             .setAttribute("aria-hidden", "false");
