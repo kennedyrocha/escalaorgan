@@ -36,7 +36,7 @@ body{
 .container{
   max-width:1000px;
   margin:16px auto 40px;
-  padding:0 20px;
+  padding:0 10px;
   display:grid;
   gap:20px;
 }
@@ -46,7 +46,7 @@ body{
   border:1px solid var(--border);
   border-radius:14px;
   box-shadow:var(--shadow);
-  padding:18px;
+  padding:10px;
 }
 .panel h2{
   margin:0 0 14px;
@@ -58,7 +58,7 @@ input, select{
   padding:10px 12px;
   border:1px solid var(--border);
   border-radius:10px;
-  font-size:16px;
+  font-size:14px;
   outline:none;
   transition:border-color .2s, box-shadow .2s;
   background:#fff;
@@ -118,4 +118,61 @@ input:focus, select:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(6,
 
 @media (min-width: 900px){
   .container{grid-template-columns:1fr 1.3fr}
+}
+
+/* Fundo escuro */
+.success-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+/* Modal */
+.success-modal[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.success-box {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 14px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.25);
+  animation: pop .25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Ícone de sucesso */
+.success-box .icon {
+  font-size: 48px;
+  color: #0abf18;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-close {
+  margin-top: 15px;
+  background: #0abf18;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-close:hover {
+  background: #099c14;
 }

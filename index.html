@@ -1,55 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cadastro na Escala da Organ</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <h1>Cadastro na Escala da Organ</h1>
-    <p class="subtitle">Escolha sua escala e veja quem já se cadastrou</p>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro na Escala da Organ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Cadastro na Escala da Organ</h1>
+      <p class="subtitle">Escolha sua escala e veja quem já se cadastrou</p>
+    </header>
 
-  <main class="container">
-    <section class="panel">
-      <h2>Cadastro</h2>
-      <form id="registrationForm" novalidate>
-        <div class="form-row">
-          <label for="name">Nome</label>
-          <input id="name" name="name" type="text" placeholder="Seu nome completo" required />
-        </div>
-        <div class="form-row">
-          <label for="shift">Escala</label>
-          <select id="shift" name="shift" required></select>
-        </div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
-          <button type="submit" class="btn primary">Cadastrar</button>
-        </div>
-        <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
-      </form>
-    </section>
-
-    <section class="panel">
-      <h2>Escalas</h2>
-      <div id="shiftsGrid" class="shifts-grid"></div>
-    </section>
-  </main>
-
-  <div id="participantsModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-content" role="document">
-      <button class="modal-close" title="Close" aria-label="Close" data-close>&times;</button>
-      <h3 id="modalTitle">Participantes</h3>
-      <ul id="participantsList" class="participants-list"></ul>
+    <main class="container">
+      <section class="panel">
+        <h2>Cadastro</h2>
+        <form id="registrationForm" novalidate>
+          <div class="form-row">
+            <label for="name">Nome</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Seu nome completo"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="shift">Escala</label>
+            <select id="shift" name="shift" required></select>
+          </div>
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              flex-wrap: wrap;
+              align-items: center;
+            "
+          >
+            <button type="submit" class="btn primary">Cadastrar</button>
+          </div>
+          <p
+            id="formMessage"
+            class="form-message"
+            role="alert"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+    </main>
+    <!-- Modal de Sucesso -->
+    <div id="successModal" class="success-modal" aria-hidden="true">
+      <div class="success-box">
+        <div class="icon">✔</div>
+        <h3 id="successTitle">Cadastrado com sucesso!</h3>
+        <p id="successTextName"></p>
+        <p>foi cadastrado(a) na</p>
+        <p id="successTextShift"></p>
+        <button class="btn-close" onclick="closeSuccessModal()">Fechar</button>
+      </div>
     </div>
-  </div>
 
-  <footer class="site-footer">
-    <small>Data is stored in your browser using localStorage and can be hosted on GitHub Pages.</small>
-  </footer>
+    <footer class="site-footer">
+      <small></small>
+    </footer>
 
-  <script src="app.js"></script>
-</body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
